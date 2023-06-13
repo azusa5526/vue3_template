@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.letter-spacing .v-btn__content {
+	letter-spacing: var(--letter-spacing, normal);
+	margin-right: calc(var(--letter-spacing, 0) * -1);
+}

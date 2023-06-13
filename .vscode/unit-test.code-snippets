@@ -1,0 +1,62 @@
+{
+	"Test Vue component template": {
+		"scope": "javascript,typescript",
+		"prefix": "testVueTemplate",
+		"description": "Vue component test template",
+		"body": [
+			"import { it, expect, describe, vi, afterEach } from 'vitest';",
+			"import { cleanup, render } from '@testing-library/vue';",
+			"import { createVuetify } from 'vuetify';",
+			"import { createTestingPinia } from '@pinia/testing';",
+			"import ${1:要測試的組件} from '../${1:要測試的組件}.vue';",
+			"",
+			"describe('${2:測試描述}', () => {",
+			"\tafterEach(() => {",
+			"\t\tcleanup();",
+			"\t});",
+			"",
+			"\tit('${3:測試案例}', () => {",
+			"\t\tconst { debug } = render(${1:要測試的組件}, {",
+			"\t\t\tglobal: {",
+			"\t\t\t\tplugins: [",
+			"\t\t\t\t\tcreateVuetify(),",
+			"\t\t\t\t\tcreateTestingPinia({",
+			"\t\t\t\t\t\tcreateSpy: vi.fn,",
+			"\t\t\t\t\t\tinitialState: {",
+			"\t\t\t\t\t\t\t/** Pinia State */",
+			"\t\t\t\t\t\t},",
+			"\t\t\t\t\t}),",
+			"\t\t\t\t],",
+			"\t\t\t},",
+			"\t\t});",
+			"\t\tdebug();",
+			"\t\t$0",
+			"\t});",
+			"});"
+		]
+	},
+	"Test Vue component test case": {
+		"scope": "javascript,typescript",
+		"prefix": "testVueCase",
+		"description": "Vue component test case template.",
+		"body": [
+			"it('${1:測試案例}', () => {",
+			"\tconst { ${3:debug} } = render(${2:要測試的組件}, {",
+			"\t\tglobal: {",
+			"\t\t\tplugins: [",
+			"\t\t\t\tcreateVuetify(),",
+			"\t\t\t\tcreateTestingPinia({",
+			"\t\t\t\t\tcreateSpy: vi.fn,",
+			"\t\t\t\t\tinitialState: {",
+			"\t\t\t\t\t\t/** Pinia State */",
+			"\t\t\t\t\t},",
+			"\t\t\t\t}),",
+			"\t\t\t],",
+			"\t\t},",
+			"\t});",
+			"\tdebug();",
+			"\t$0",
+			"});"
+		]
+	}
+}

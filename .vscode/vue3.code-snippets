@@ -1,0 +1,68 @@
+{
+	"Vue template": {
+		"scope": "vue",
+		"prefix": "vue",
+		"body": ["<template>", "$1", "</template>", "", "<script setup lang=\"ts\">", "$2", "</script>"],
+		"description": "Vue template"
+	},
+	"onMounted": {
+		"scope": "javascript,typescript",
+		"prefix": "vonMounted",
+		"body": ["onMounted(() => {$1});"],
+		"description": "Vue component onMounted"
+	},
+	"ref": {
+		"scope": "javascript,typescript",
+		"prefix": "vref",
+		"body": ["const $1 = ref($2);"],
+		"description": "Vue Ref"
+	},
+	"reactive": {
+		"scope": "javascript,typescript",
+		"prefix": "vreactive",
+		"body": ["const $1 = reactive($2);"],
+		"description": "Vue Reactive"
+	},
+	"computed": {
+		"scope": "javascript,typescript",
+		"prefix": "vcomputed",
+		"body": ["const $1 = computed(() => {$2});"],
+		"description": "Vue computed"
+	},
+	"router": {
+		"scope": "javascript,typescript",
+		"prefix": "vrouter",
+		"body": ["const router = useRouter();"],
+		"description": "Vue router"
+	},
+	"route": {
+		"scope": "javascript,typescript",
+		"prefix": "vroute",
+		"body": ["const route = useRoute();"],
+		"description": "Vue route"
+	},
+	"Pinia option store": {
+		"scope": "javascript,typescript",
+		"prefix": "vstore",
+		"body": [
+			"import { defineStore } from 'pinia';",
+			"",
+			"export const use${2:StoreName} = defineStore('${1:StoreName}', {",
+			"\tstate: () => ({}),",
+			"\tgetters: {},",
+			"\tactions: {},",
+			"});"
+		]
+	},
+	"Debug keydown": {
+		"scope": "javascript,typescript",
+		"prefix": "vdebug keydown",
+		"body": [
+			"window.addEventListener('keydown', (event: KeyboardEvent) => {",
+			"\tif (event.key === 'd') {",
+			"\t\tconsole.log($0);",
+			"\t}",
+			"});"
+		]
+	}
+}
