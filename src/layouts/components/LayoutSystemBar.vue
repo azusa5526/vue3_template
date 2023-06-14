@@ -1,18 +1,24 @@
 <template>
-	<v-system-bar window height="36" class="!justify-between !bg-white !px-5">
+	<v-system-bar window height="36" class="!justify-between !bg-white !px-4">
 		<div class="flex items-center">
-			<svg-icon use="yunlin_logo" class="mr-2 h-6 w-6"></svg-icon>
-			<h1 class="text-base font-bold text-black/90">水情圖資展示平台</h1>
+			<v-btn flat icon class="mr-2 !h-full !w-[30px] rounded-none" @click="appStore.navbarShow = !appStore.navbarShow">
+				<v-icon>{{ appStore.navbarShow ? 'format_indent_increase' : 'format_indent_decrease' }}</v-icon>
+			</v-btn>
+			<h1 class="text-base font-bold text-black/90">Template</h1>
 		</div>
 		<div>
 			<v-btn flat :ripple="false">
 				<div class="flex items-center">
-					<v-icon icon="home" class="text-black !opacity-100"></v-icon>
-					<span class="font-bold text-[#074E92]">回單一入口網</span>
+					<v-icon icon="home" class="mr-2 text-black !opacity-100"></v-icon>
+					<span class="font-bold text-[#074E92]">Home</span>
 				</div>
 			</v-btn>
 		</div>
 	</v-system-bar>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useAppStore } from '@/store/app';
+
+const appStore = useAppStore();
+</script>

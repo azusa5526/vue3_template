@@ -1,5 +1,6 @@
 import router from './index';
 import { nextTick } from 'vue';
+import Cookies from 'js-cookie';
 
 router.beforeEach(async () => {});
 
@@ -23,3 +24,7 @@ router.onError((err, to) => {
 		return;
 	}
 });
+
+function haveToken(): boolean {
+	return !!Cookies.get('token');
+}

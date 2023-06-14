@@ -1,3 +1,3 @@
 export * from './alert';
 export * from './app';
-export * from './dashboard';
+export * from './default';

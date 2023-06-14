@@ -26,7 +26,6 @@
 					<v-divider></v-divider>
 
 					<v-list class="!py-0">
-						<v-list-item @click="test">Line 綁定</v-list-item>
 						<v-list-item @click="logout">登出</v-list-item>
 					</v-list>
 				</v-card>
@@ -43,10 +42,6 @@ import { useDisplay } from 'vuetify';
 const isMenuShow = ref(false);
 const { mobile } = useDisplay();
 const appStore = useAppStore();
-
-function test() {
-	console.log('test');
-}
 
 function logout() {
 	console.log('logout');

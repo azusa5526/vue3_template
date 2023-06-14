@@ -2,6 +2,8 @@ import axios from 'axios';
 import Cookie from 'js-cookie';
 import type { AxiosPromise } from 'axios';
 
+export type BasePromise<T, E = any> = AxiosPromise<BaseResponse<T, E>>;
+
 export interface BaseResponse<T, E = any> {
 	result: T;
 	targetUrl: string | null;
@@ -17,8 +19,6 @@ export interface BaseError {
 	message: string | null;
 	validationErrors: any;
 }
-
-export type BasePromise<T, E = any> = AxiosPromise<BaseResponse<T, E>>;
 
 const instance = axios.create({
 	baseURL: import.meta.env.VITE_API_PATH,
